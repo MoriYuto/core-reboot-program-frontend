@@ -1,0 +1,18 @@
+/* 
+:root {
+  --primary: rgb(212 175 55);
+  --on-primary: rgb(15 23 42);
+  --surface: rgb(30 41 59);
+  --on-surface: rgb(255 255 255);
+  --surface-container: rgb(55 65 81);
+  --on-surface-container: rgb(156 163 175);
+}
+
+.dark {
+  --primary: rgb(212 175 55);
+  --on-primary: rgb(15 23 42);
+  --surface: rgb(30 41 59);
+  --on-surface: rgb(255 255 255);
+  --surface-container: rgb(55 65 81);
+  --on-surface-container: rgb(156 163 175);
+} */

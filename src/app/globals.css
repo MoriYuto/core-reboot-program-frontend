@@ -1,26 +1,128 @@
 @import "tailwindcss";
+@import "./theme.generated.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: rgb(212 175 55);
+  --on-primary: rgb(15 23 42);
+  --surface: rgb(15 23 42);
+  --surface-light: rgb(30 41 59);
+  --on-surface: rgb(255 255 255);
+  --surface-container: rgb(55 65 81);
+  --surface-container-light: rgb(15 23 42);
+  --on-surface-container: rgb(156 163 175);
+  --primary-glass: rgb(212 175 55 / 15%);
+  --primary-glass-light: rgb(212 175 55 / 20%);
+  --background: rgb(255 255 255);
+  --foreground: rgb(15 23 42);
+
+  /* editting */
+  --surface-deep: rgb(10 15 30);
+  --border-subtle: rgb(51 65 85);
+  --text-muted: rgb(107 114 128);
+  --text-secondary: rgb(209 213 219);
+  --primary-highlight: rgb(244 208 63);
+  --primary-border: rgb(212 175 55 / 30%);
+  --primary-border-strong: rgb(212 175 55 / 50%);
+  --primary-glass-subtle: rgb(212 175 55 / 10%);
+  --primary-highlight-glass: rgb(244 208 63 / 20%);
+  --white-glass: rgb(255 255 255 / 20%);
+  --accent-green: rgb(16 185 129);
+  --accent-green-dark: rgb(5 150 105);
+  --accent-green-glass: rgb(16 185 129 / 20%);
+  --accent-amber: rgb(245 158 11);
+  --accent-amber-glass: rgb(245 158 11 / 20%);
+  --accent-blue: rgb(59 130 246);
+  --accent-blue-glass: rgb(59 130 246 / 20%);
+  --accent-red: rgb(239 68 68);
+  --accent-red-glass: rgb(239 68 68 / 20%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: rgb(15 23 42);
+  --foreground: rgb(255 255 255);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-size: 62.5%;
 }
+
+@theme {
+  --font-mincho: "Hiragino Mincho Pro","Hiragino Mincho ProN","Yu Mincho","MS Mincho",serif;
+  --font-roboto: var(--font-roboto), "Hiragino Kaku Gothic ProN", sans-serif;
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-light: var(--surface-light);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-light: var(--surface-container-light);
+  --color-on-surface-container: var(--on-surface-container);
+  --color-primary-glass: var(--primary-glass);
+  --color-primary-glass-light: var(--primary-glass-light);
+
+  /* result page */
+  --color-surface-deep: var(--surface-deep);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-muted: var(--text-muted);
+  --color-text-secondary: var(--text-secondary);
+  --color-primary-highlight: var(--primary-highlight);
+  --color-primary-border: var(--primary-border);
+  --color-primary-border-strong: var(--primary-border-strong);
+  --color-primary-glass-subtle: var(--primary-glass-subtle);
+  --color-primary-highlight-glass: var(--primary-highlight-glass);
+  --color-white-glass: var(--white-glass);
+  --color-accent-green: var(--accent-green);
+  --color-accent-green-dark: var(--accent-green-dark);
+  --color-accent-green-glass: var(--accent-green-glass);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-amber-glass: var(--accent-amber-glass);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-glass: var(--accent-blue-glass);
+  --color-accent-red: var(--accent-red);
+  --color-accent-red-glass: var(--accent-red-glass);
+  --text-title-large: clamp(3rem, 8vw, 6rem)/* 30px~60px */;
+  --text-title-large--line-height: clamp(4.5rem, 12vw, 6rem)/* 45px~60px */;
+  --text-title-large--font-weight: 600;
+  --text-title-medium: clamp(2.8rem, 7.45vw, 3.6rem)/* 36px */;
+  --text-title-medium--line-height: clamp(3.6rem, 18.09rem - 0.3756vw, 4rem)/* 45px */;
+  --text-title-medium--font-weight: 600;
+  --text-title-small: 3.0rem/* 30px */;
+  --text-title-small--line-height: 3.6rem/* 36px */;
+  --text-title-small--font-weight: 600;
+  --text-headline-large: clamp(2.8rem, 7.45vw, 3.6rem)/* 36px */;
+  --text-headline-large--line-height: clamp(3.6rem, 18.09rem - 0.3756vw, 4rem)/* 45px */;
+  --text-headline-large--font-weight: 300;
+  --text-headline-medium: clamp(2.4rem, 6.4vw, 3.0rem)/* 28px */;
+  --text-headline-medium--line-height: clamp(3.2rem, 8.54vw, 3.6rem)/* 28px~30px */;
+  --text-headline-medium--font-weight: 300;
+  --text-headline-small: clamp(2.2rem, 5.8vw, 2.8rem)/* 28px */;
+  --text-headline-small--line-height: clamp(3rem, 7.5vw, 2.8rem)/* 28px~30px */;
+  --text-headline-small--font-weight: 300;
+  --text-label-large: 2.4rem/* 24px */;
+  --text-label-large--line-height: 3.2rem/* 32px */;
+  --text-label-large--font-weight: 600;
+  --text-label-medium: 2rem/* 20px */;
+  --text-label-medium--line-height: 2.8rem/* 28px */;
+  --text-label-medium--font-weight: 600;
+  --text-label-small: 1.4rem/* 14px */;
+  --text-label-small--line-height: 2.0rem/* 20px */;
+  --text-label-small--font-weight: 600;
+  --text-body-large: clamp(1.8rem, 4.8vw, 2rem)/* 18px~20px */;
+  --text-body-large--line-height: clamp(3rem, 7.5vw, 2.8rem)/* 28px~30px */;
+  --text-body-large--font-weight: 300;
+  --text-body-medium: clamp(1.4rem, 4vw, 1.8rem)/* 14px~18px */;
+  --text-body-medium--line-height: clamp(2.4rem, 6.5vw, 2.8rem)/* 24px~28px */;
+  --text-body-medium--font-weight: 300;
+  --text-body-small: 1.4rem/* 14px */;
+  --text-body-small--line-height: 2rem/* 20px */;
+  --text-body-small--font-weight: 300;
+}
+
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto);
 }
+
+
